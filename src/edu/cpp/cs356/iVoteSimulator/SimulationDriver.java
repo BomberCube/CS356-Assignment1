@@ -21,7 +21,9 @@ public class SimulationDriver {
 	 */
 	public static void main(String[] args) {
 		Question debug = new Question(4);
-		System.out.println(debug);
+		Question debug2 = new Question(12);
+		System.out.println(debug.toString());
+		System.out.println(debug2.toString());
 	}
 
 }

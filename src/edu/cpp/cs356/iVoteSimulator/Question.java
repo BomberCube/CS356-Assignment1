@@ -9,7 +9,7 @@ package edu.cpp.cs356.iVoteSimulator;
  */
 public class Question {
 	
-	protected String[] queries;
+	//protected String[] queries;
 	protected int[] answers;
 	private int count;
 	
@@ -17,9 +17,10 @@ public class Question {
 	/**
 	 * int count: number of questions for the question
 	 */
-	public Question(int count) {
-		queries = new String[count];
-		answers = new int[count];
+	public Question(int count_) {
+		//queries = new String[count];
+		answers = new int[count_];
+		count = count_;
 		
 	}
 	
@@ -28,15 +29,22 @@ public class Question {
 	}
 	
 	public String toString() {
-		for (int i = 0; i < count, i++)
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < count; i++)
 		{
-			if (queries[i] != null)
-				System.out.printf("%s : %d%n", queries[i], answers[i]);
-			else
-				System.out.printf("%s : %d%n", (char) (64+count), answers[i]);
+			//if (queries[i] != null)
+			//	System.out.printf("%s : %d%n", queries[i], answers[i]);
+			//else
+			//	System.out.printf("%s : %d%n", String((char) (64+count)), answers[i]);
+			
+			
+			sb.append((char) (65+i));
+			sb.append(" : ");
+			sb.append(answers[i]);
+			sb.append("\n");
 		}
 		
-		return ""; 
+		return sb.toString(); 
 		
 	}
 	
