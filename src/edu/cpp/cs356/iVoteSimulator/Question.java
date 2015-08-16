@@ -3,6 +3,8 @@
  */
 package edu.cpp.cs356.iVoteSimulator;
 
+import java.util.LinkedList;
+
 /**
  * @author BomberCube
  *
@@ -12,6 +14,7 @@ public class Question {
 	//protected String[] queries;
 	protected int[] answers;
 	private int count;
+	private LinkedList<String> uniqueStudents;
 	
 	
 	/**
@@ -24,7 +27,15 @@ public class Question {
 		
 	}
 	
-	public void increment(int index) {
+	
+	public void increment(int index, Student s) {
+		if (!uniqueStudents.contains(s.getUUIDString())) {
+			increment(index);
+			uniqueStudents.add(s.getUUIDString());
+		}
+	}
+	
+	private void increment(int index) {
 		answers[index]++;
 	}
 	
@@ -45,6 +56,9 @@ public class Question {
 		}
 		
 		return sb.toString(); 
+	}
+	
+	public void clear() {
 		
 	}
 	
