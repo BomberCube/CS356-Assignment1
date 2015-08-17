@@ -4,7 +4,7 @@
 package edu.cpp.cs356.iVoteSimulator;
 
 /**
- * @author BomberCube
+ * @author Lance Lentz
  *
  */
 public class BooleanQuestion extends Question {

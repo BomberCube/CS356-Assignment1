@@ -6,7 +6,7 @@ package edu.cpp.cs356.iVoteSimulator;
 import java.util.LinkedList;
 
 /**
- * @author BomberCube
+ * @author Lance Lentz
  *
  */
 public class Question {
@@ -19,13 +19,12 @@ public class Question {
 	
 	
 	/**
-	 * int count: number of questions for the question
+	 * @param count: number of questions for the question
 	 */
 	public Question(int count_) {
 		//queries = new String[count];
 		answers = new int[count_];
 		count = count_;
-		
 	}
 	
 	

@@ -6,7 +6,7 @@ package edu.cpp.cs356.iVoteSimulator;
 import java.util.UUID;
 
 /**
- * @author BomberCube
+ * @author Lance Lentz
  *
  */
 public class Student {
