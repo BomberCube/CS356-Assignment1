@@ -28,8 +28,13 @@ public class IVoteService {
 	}
 	
 	public void studentManyResponse(Student[] students, int[] answers, int size) {
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < students.length; i++) {
 			studentResponse(students[i],answers[i]);
+		}
+	}
+	public void studentManyResponse(Student[] students, int size) {
+		for (int i = 0; i < students.length; i++) {
+			studentResponse(students[i],students[i].favoriteAnswer(size));
 		}
 	}
 	

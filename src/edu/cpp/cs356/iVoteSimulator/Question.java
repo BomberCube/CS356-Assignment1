@@ -26,14 +26,17 @@ public class Question {
 		//queries = new String[count];
 		answers = new int[count_];
 		count = count_;
+		uniqueStudents = new LinkedList<String>();
 	}
 	
 	
 	public void increment(int index, Student s) {
-		if (!uniqueStudents.contains(s.getID())) {
-			increment(index);
-			uniqueStudents.add(s.getID());
-		}
+		
+			if (!uniqueStudents.contains(s.getID())) {
+				increment(index);
+				uniqueStudents.add(s.getID());
+			}
+		
 	}
 	
 	private void increment(int index) {
