@@ -20,7 +20,7 @@ public class Student {
 		ID = UUID.randomUUID();
 	}
 	
-	public String getUUIDString() {
+	public String getID() {
 		return ID.toString();
 	}
 

@@ -33,6 +33,8 @@ public class BooleanQuestion extends Question {
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
+		if (query != null)
+			sb.append(query + "\n");
 		sb.append(((Boolean) (correctAnswer == 0)).toString() + " : " + answers[0] + "\n");
 		sb.append(((Boolean) (correctAnswer == 1)).toString() + " : " + answers[1] + "\n");
 		return sb.toString();

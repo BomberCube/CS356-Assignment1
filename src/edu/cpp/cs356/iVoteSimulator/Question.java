@@ -11,7 +11,8 @@ import java.util.LinkedList;
  */
 public class Question {
 	
-	//protected String[] queries;
+	protected String[] answertext;
+	protected String query;
 	protected int[] answers;
 	private int count;
 	private LinkedList<String> uniqueStudents;
@@ -29,9 +30,9 @@ public class Question {
 	
 	
 	public void increment(int index, Student s) {
-		if (!uniqueStudents.contains(s.getUUIDString())) {
+		if (!uniqueStudents.contains(s.getID())) {
 			increment(index);
-			uniqueStudents.add(s.getUUIDString());
+			uniqueStudents.add(s.getID());
 		}
 	}
 	
@@ -39,15 +40,30 @@ public class Question {
 		answers[index]++;
 	}
 	
+	public void setMainQuery(String text) {
+		query = text;
+	}
+	
+	public void setAnswer(int index, String text) {
+		if (index < count) {
+			answertext[index] = text;			
+		}
+	}
+	
+	public void setAllAnswers(String[] text) {
+		for (int i = 0; i < count; i++) {
+			answertext[i] = text[i];
+		}
+	}
+	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
+		if (query != null)
+			sb.append(query + "\n");
 		for (int i = 0; i < count; i++)
 		{
-			//if (queries[i] != null)
-			//	System.out.printf("%s : %d%n", queries[i], answers[i]);
-			//else
-			//	System.out.printf("%s : %d%n", String((char) (64+count)), answers[i]);
-			
+			if (answertext[i] != null)
+				sb.append(answertext[i] + "\n");
 			
 			sb.append((char) (65+i));
 			sb.append(" : ");
@@ -59,6 +75,7 @@ public class Question {
 	}
 	
 	public void clear() {
+		answertext = new String[count];
 		
 	}
 	
