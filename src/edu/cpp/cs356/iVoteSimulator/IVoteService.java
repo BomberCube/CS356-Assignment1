@@ -9,7 +9,7 @@ package edu.cpp.cs356.iVoteSimulator;
  */
 public class IVoteService {
 
-	private Question currentQuestion; 
+	public Question currentQuestion; 
 	
 	
 	/**

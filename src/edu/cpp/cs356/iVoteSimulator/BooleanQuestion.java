@@ -15,8 +15,8 @@ public class BooleanQuestion extends Question {
 	 * @param count_ forced to 2 for boolean questions
 	 * @param correctAnswer_ Choose either 0 or 1
 	 */
-	public BooleanQuestion(int correctAnswer_) {
-		super(2);
+	public BooleanQuestion(int correctAnswer_, String text) {
+		super(2, text);
 		if (correctAnswer == 0)
 			correctAnswer = 0;
 		else
@@ -33,8 +33,7 @@ public class BooleanQuestion extends Question {
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		if (query != null)
-			sb.append(query + "\n");
+		sb.append(query + "\n");
 		sb.append(((Boolean) (correctAnswer == 0)).toString() + " : " + answers[0] + "\n");
 		sb.append(((Boolean) (correctAnswer == 1)).toString() + " : " + answers[1] + "\n");
 		return sb.toString();

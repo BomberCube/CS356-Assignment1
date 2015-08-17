@@ -21,7 +21,8 @@ public class Question {
 	/**
 	 * @param count: number of questions for the question
 	 */
-	public Question(int count_) {
+	public Question(int count_, String query_) {
+		query = query_;
 		//queries = new String[count];
 		answers = new int[count_];
 		count = count_;
@@ -57,12 +58,13 @@ public class Question {
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		if (query != null)
-			sb.append(query + "\n");
+		sb.append(query + "\n");
 		for (int i = 0; i < count; i++)
 		{
-			if (answertext[i] != null)
-				sb.append(answertext[i] + "\n");
+			try { 
+				sb.append(answertext[i] + "\n"); 
+			} catch (Exception e) { }
+			
 			
 			sb.append((char) (65+i));
 			sb.append(" : ");
